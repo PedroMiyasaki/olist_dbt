@@ -5,7 +5,7 @@ with src as (
 
 select
   product_id,
-  product_category_name,
+  case when product_category_name is null then null else trim(array_to_string(array_unique(split(product_category_name, '_')), '_')) end as product_category_name,
   product_name_lenght::int         as product_name_length,
   product_description_lenght::int  as product_description_length,
   product_photos_qty::int          as product_photos_qty,
