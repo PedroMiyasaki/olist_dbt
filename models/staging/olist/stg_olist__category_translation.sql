@@ -4,6 +4,6 @@ with src as (
 )
 
 select
-  c1 as product_category_name,
-  c2 as product_category_name_english
+  c1 as product_category_name_english,
+  c2 as product_category_name
 from src
